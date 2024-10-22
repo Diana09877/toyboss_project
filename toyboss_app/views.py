@@ -14,7 +14,11 @@ class ProductInnerView(TemplateView):
 class PublicationsView(TemplateView):
     template_name = 'publications.html'
 
-class PublicationsInner(TemplateView):
+class PublicationsInnerView(TemplateView):
     template_name = 'publications-inner.html'
 
+class RecipesView(TemplateView):
+    template_name = 'recipes.html'
 
+class RecipesInnerView(TemplateView):
+    template_name = 'recipes-inner.html'
