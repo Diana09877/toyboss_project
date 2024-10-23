@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 from toyboss_app.views import HomeView, ProductView, ProductInnerView, PublicationsView, RecipesInnerView, RecipesView, \
-    PublicationsInnerView
+    PublicationsInnerView, AboutCompanyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +29,5 @@ urlpatterns = [
     path('publications-inner/<int:pk>/', PublicationsInnerView.as_view(), name='publications-inner-url'),
     path('recipes/', RecipesView.as_view(), name='recipes-url'),
     path('recipes-inner/int:pk/', RecipesInnerView.as_view(), name='recipes-inner-url'),
+    path('about-us/', AboutCompanyView.as_view(), name='about-company-url')
 ]

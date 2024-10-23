@@ -18,6 +18,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name='описание')
     recipes = models.TextField(verbose_name='рецепты')
     image = models.ImageField(upload_to='products_images/')
+    is_active = models.BooleanField()
 
     class Meta:
         verbose_name_plural = 'Продукты'

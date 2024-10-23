@@ -1,50 +1,19 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="ru">
-=======
 {% extends 'base.html' %}
 {% load static %}
 
 {%block content%}
->>>>>>> e23d33fe555c753db29094642e9d645ef3877a86
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="header-logo">
-            <div class="header-logo__img"><a href="#"><img src="img/svg/logo-header.svg"/></a></div>
-          </div>
-          <div class="header-nav__content">
-            <div class="navigation">
-              <ul class="nav">
-                <div class="nav-group">
-                  <li class="nav-link active"><a href="#">О нас</a></li>
-                  <li class="nav-link"><a href="#">Продукция</a></li>
-                  <li class="nav-link"><a href="#">Публикации</a></li>
-                </div>
-                <div class="nav-group">
-                  <li class="nav-link"><a href="#">Рецепты</a></li>
-
-                </div>
-              </ul>
-            </div>
-            <div class="header-language">
-              <div class="network-link"><a href="#"><img src="img/svg/instagram-icon.svg"/></a><a href="#"><img src="img/svg/facebook-icon.svg"/></a><a href="#"><img src="img/svg/whatsapp-icon.svg"/></a></div>
-              <div class="language-link"><a href="#"><img src="img/svg/kg-icon.svg"/></a><a href="#"><img src="img/svg/ru-icon.svg"/></a><a href="#"><img src="img/svg/en-icon.svg"/></a><a href="#"><img src="img/svg/kz-icon.svg"/></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
     <section class="product publications-inner-page">
       <div class="container">
         <div class="product__content">
           <div class="product-left">
-            <h1> публикации</h1>
+            <h1> Публикации</h1>
           </div>
           <div class="product-right">
             <div class="about-company-all">
-              <div class="crumb"><a href="#">Главная</a><a href="#">Продукция</a><span> Колбасы</span></div>
+              <div class="crumb"><a href="{% url 'home-url' %}">Главная</a>
+                <a href="{% url 'product-url' %}">Продукция</a>
+                <span> Колбасы</span></div>
               <div class="about-company__content">
                 <div class="about-company">
                   <h2 class="h2">  Производитель колбасных издели халяль №1 в Кыргызстане</h2>
@@ -54,12 +23,6 @@
                     <div class="main-slider">
                       <div class="swiper-container">
                         <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <div class="publications-inner-img"><img src="img/png/img.png"/></div>
-                          </div>
-                          <div class="swiper-slide">
-                            <div class="publications-inner-img"><img src="img/png/img.png"/></div>
-                          </div>
                           <div class="swiper-slide">
                             <div class="publications-inner-img"><img src="img/png/img.png"/></div>
                           </div>
@@ -79,33 +42,6 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo"><a href="#">   Developed by YOUR-NAME 2024</a></div>
-          <div class="footer-nav-content">
-            <nav class="nav">
-              <ul>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Продукция</a></li>
-                <li><a href="#">Публикации</a></li>
-                <li><a href="#">Рецепты</a></li>
-              </ul>
-            </nav>
-            <div class="footer-link">
-              <div class="network-link"><a href="#"><img src="img/svg/instagram-icon.svg"/></a><a href="#"><img src="img/svg/facebook-icon.svg"/></a><a href="#"><img src="img/svg/whatsapp-icon.svg"/></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper@11.1.14/swiper.min.js"></script>
-    <script src="js/libs.js"></script>
-    <script src="js/main.js"></script>
   </body>
-<<<<<<< HEAD
-</html>
-=======
 {% endblock %}
->>>>>>> e23d33fe555c753db29094642e9d645ef3877a86
+
