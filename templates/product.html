@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {%block content%}
   <body>
@@ -7,11 +8,11 @@
       <div class="container">
         <div class="product__content">
           <div class="product-left">
-            <h1> Продукция</h1>
+            <h1> {% trans 'Продукция' %}</h1>
           </div>
           <div class="product-right">
-            <div class="crumb"><a href="{% url 'home-url' %}">Главная</a>
-            <div class="crumb">  <a href="{% url 'product-url' %}">Продукция</a>
+            <div class="crumb"><a href="{% url 'home-url' %}">{% trans 'Главная' %}</a>
+            <div class="crumb">  <a href="{% url 'product-url' %}">{% trans 'Продукция' %}</a>
           </div>
         </div>
       </div>
@@ -44,7 +45,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="button__product-all"><a href="#">Смотреть все</a></div>
+                <div class="button__product-all"><a href="#">{% trans 'Смотреть все' %}</a></div>
               </div>
             </div>
           </div>

@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,18 +31,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'toyboss_app',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -105,13 +108,23 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+gettext = lambda s: s
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+    ('ru', gettext('Russian')),
+    ('ky', gettext('Kyrgyz')),
+    ('en', gettext('English')),
+
+)
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

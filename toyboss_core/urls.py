@@ -15,19 +15,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
 from toyboss_app.views import HomeView, ProductView, ProductInnerView, PublicationsView, RecipesInnerView, RecipesView, \
     PublicationsInnerView, AboutCompanyView
+from django.conf.urls.static import static
+from django.urls import path, include
+from django.conf import settings
+
+from django.conf.urls.i18n import i18n_patterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', HomeView.as_view(), name='home-url'),
-    path('product/', ProductView.as_view(), name='product-url'),
-    path('product-inner/<int:pk>/', ProductInnerView.as_view(), name='product-inner-url'),
-    path('publications/', PublicationsView.as_view(), name='publications-url'),
-    path('publications-inner/<int:pk>/', PublicationsInnerView.as_view(), name='publications-inner-url'),
-    path('recipes/', RecipesView.as_view(), name='recipes-url'),
-    path('recipes-inner/int:pk/', RecipesInnerView.as_view(), name='recipes-inner-url'),
-    path('about-us/', AboutCompanyView.as_view(), name='about-company-url')
+    path('i18n/', include('django.conf.urls.i18n')),
+
 ]
+
+urlpatterns += i18n_patterns(
+    path('', HomeView.as_view(), name='home-url'),
+    path('product/', ProductView.as_view(), name='product-url'),
+    path('product/<int:pk>/', ProductInnerView.as_view(), name='product-inner-url'),
+    path('publications/', PublicationsView.as_view(), name='publications-url'),
+    path('publications/<int:pk>/', PublicationsInnerView.as_view(), name='publications-inner-url'),
+    path('recipes/', RecipesView.as_view(), name='recipes-url'),
+    path('recipes/int:pk/', RecipesInnerView.as_view(), name='recipes-inner-url'),
+    path('about/', AboutCompanyView.as_view(), name='about-company-url'),
+)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

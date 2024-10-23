@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'fonts/PTSerif/stylesheet.css' %}"/>
     <link rel="stylesheet" href="{% static 'fonts/PTSans/stylesheet.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-    <title>Главная</title>
+    <title>{% trans 'Главная' %}</title>
   </head>
 <header class="header">
       <div class="container">
@@ -39,6 +40,19 @@
               </a><a href="#"><img src="{% static 'img/svg/facebook-icon.svg' %}"/></a>
                 <a href="#"><img src="{% static 'img/svg/whatsapp-icon.svg' %}"/></a></div>
               <div class="language-link"><a href="#">
+              <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+              <input name="next" type="hidden" value="{{ redirect_to }}">
+              <select name="language">
+              {% get_current_language as LANGUAGE_CODE %}
+                {% for lang in LANGUAGES %}
+                <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                {{ lang.1 }}
+                </option>
+              {% endfor %}
+              </select>
+              <input type="submit" value="Go">
+              </form>
                 <img src="{% static 'img/svg/kg-icon.svg' %}"/>
               </a><a href="#"><img src="{% static 'img/svg/ru-icon.svg' %}"/>
               </a><a href="#"><img src="{% static 'img/svg/en-icon.svg' %}"/>
