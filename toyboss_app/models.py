@@ -4,8 +4,8 @@ class ProductCategory(models.Model):
     name = models.CharField(max_length=255)
 
     class Meta:
-        verbose_name_plural = 'Категории товаров'
-        verbose_name = 'Категория товара'
+        verbose_name_plural = 'Категории продуктов'
+        verbose_name = 'Категория продукта'
 
     def __str__(self):
         return self.name
@@ -13,10 +13,10 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='products')
+    product_category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='products')
     name = models.CharField(max_length=255, verbose_name='название')
     description = models.TextField(verbose_name='описание')
-    recipes = models.TextField(verbose_name='рецепты')
+    ingredients = models.TextField(verbose_name='состав')
     image = models.ImageField(upload_to='products_images/')
     is_active = models.BooleanField()
 

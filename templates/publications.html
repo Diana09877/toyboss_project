@@ -21,10 +21,22 @@
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor...<span>подробнее</span></p><img src="img/png/img.png"/><a href="#"></a>
                 </div>
               </div>
-              <div class="publication__pagination">
-                <div class="pagination__left"><a class="arrow-left disabled" href="#"></a></div>
-                <div class="publication__pagination-num"><a class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">...</a><a href="#">85</a></div>
-                <div class="pagination__right"><a class="arrow-right" href="#"></a></div>
+                   <div class="publication__pagination">
+                {% if pages.has_previous %}
+                <div class="pagination__left">
+                  <a class="arrow-left disabled" href="?page={{pages.previous_page_number }}">Предыдущий</a></div>
+                {% endif %}
+                <div class="tm-paging-wrapper">
+                  <span class="d-inline-block mr-3">Страница</span>
+                  <nav class="tm-paging-nav d-inline-block">
+                    {% for p in pages.paginator.page_range %}
+                    <li class="tm-paging-item {% if pages.number == p %} active {% endif %}">
+                      <a href="?page={{ p }}" class="mb-2 tm-btn tm-paging-link">{{ p }}</a>
+                    </li>
+                    {% endfor %}
+                {% if pages.has_next %}
+                <div class="pagination__right"><a class="arrow-right" href="?page={{pages.next_page_number }}">Следующий</a></div>
+                {% endif %}
               </div>
             </div>
           </div>

@@ -10,7 +10,10 @@
             <h1> Продукция</h1>
           </div>
           <div class="product-right">
-            <div class="crumb"><a href="{% url 'home-url' %}">Главная</a><a href="#">Продукция</a><span> Колбасы</span></div>
+            <div class="crumb"><a href="{% url 'home-url' %}">Главная</a>
+              <a href="#">Продукция</a>
+              <span>{{ product.category }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -34,8 +37,8 @@
                 <p>{{ product.description }}</p>
               </div>
               <div class="product__inner-heading">
-                <h2>  Состав</h2>
-                <p>  Миссия компании заключается в том, чтобы прикладывать все силы для улучшения качества жизни наших потребителей.</p>
+                <h2>Ингредиенты:</h2>
+                <p>{{ product.ingredients }}</p>
               </div>
               <div class="product__inner-heading">
                 <h2>Рецепты</h2>

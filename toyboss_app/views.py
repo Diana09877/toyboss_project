@@ -49,6 +49,17 @@ class PublicationsInnerView(TemplateView):
 
 class RecipesView(TemplateView):
     template_name = 'recipes.html'
+    def get_context_data(self, **kwargs):
+        products = Product.objects.filter(is_active=True)
+        paginator = Paginator(products, 3)
+        page_number = self.request.GET.get('page', 1)
+        pages = paginator.get_page(page_number)
+        context = {
+            'pages': pages
+
+
+        }
+        return context
 
 class RecipesInnerView(TemplateView):
     template_name = 'recipes-inner.html'
