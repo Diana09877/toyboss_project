@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -15,12 +16,22 @@
     <link rel="stylesheet" href="css/style.css"/>
     <title>About company</title>
   </head>
+=======
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+>>>>>>> e23d33fe555c753db29094642e9d645ef3877a86
   <body>
     <header class="header">
       <div class="container">
         <div class="header-content">
           <div class="header-logo">
+<<<<<<< HEAD
             <div class="header-logo__img"><a href="#"><img src="img/svg/logo-header.svg"/></a></div>
+=======
+            <div class="header-logo__img"><a href="#"><img src="{% static 'img/svg/logo-header.svg' %}"/></a></div>
+>>>>>>> e23d33fe555c753db29094642e9d645ef3877a86
           </div>
           <div class="header-nav__content">
             <div class="navigation">
@@ -36,8 +47,20 @@
               </ul>
             </div>
             <div class="header-language">
+<<<<<<< HEAD
               <div class="network-link"><a href="#"><img src="img/svg/instagram-icon.svg"/></a><a href="#"><img src="img/svg/facebook-icon.svg"/></a><a href="#"><img src="img/svg/whatsapp-icon.svg"/></a></div>
               <div class="language-link"><a href="#"><img src="img/svg/kg-icon.svg"/></a><a href="#"><img src="img/svg/ru-icon.svg"/></a><a href="#"><img src="img/svg/en-icon.svg"/></a><a href="#"><img src="img/svg/kz-icon.svg"/></a></div>
+=======
+              <div class="network-link"><a href="#">
+                <img src="{% static 'img/svg/instagram-icon.svg' %}"/></a><a href="#">
+                <img src="{% static 'img/svg/facebook-icon.svg' %}"/></a><a href="#">
+                <img src="{% static 'img/svg/whatsapp-icon.svg' %}"/></a></div>
+              <div class="language-link"><a href="#">
+                <img src="{% static 'img/svg/kg-icon.svg' %}"/></a>
+                <a href="#"><img src="{% static 'img/svg/ru-icon.svg' %}"/></a>
+                <a href="#"><img src="{% static 'img/svg/en-icon.svg' %}"/></a><a href="#">
+                  <img src="{% static 'img/svg/kz-icon.svg' %}"/></a></div>
+>>>>>>> e23d33fe555c753db29094642e9d645ef3877a86
             </div>
           </div>
         </div>
@@ -66,6 +89,7 @@
         </div>
       </div>
     </section>
+<<<<<<< HEAD
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -92,3 +116,7 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+=======
+  </body>
+{% endblock %}
+>>>>>>> e23d33fe555c753db29094642e9d645ef3877a86
